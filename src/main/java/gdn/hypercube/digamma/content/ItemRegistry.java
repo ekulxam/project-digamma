@@ -8,4 +8,8 @@ import net.minecraft.item.Item;
 @UsedImplicitly
 public class ItemRegistry extends ReflectiveRegistry<Item> {
     public final Item DATAPAD = this.create("datapad", DatapadItem::new);
+
+    protected ItemRegistry() {
+        super("digamma");
+    }
 }
