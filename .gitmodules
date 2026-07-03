@@ -1,6 +1,9 @@
 [submodule "Epsilon"]
 	path = submodules/Epsilon
 	url = git@github.com:AutumnalModding/Epsilon
+	branch = master
+
 [submodule "Solaris"]
 	path = submodules/Solaris
 	url = git@github.com:AutumnalModding/SolarisLib
+	branch = master
