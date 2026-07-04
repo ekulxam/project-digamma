@@ -13,4 +13,5 @@ pluginManagement {
 rootProject.name = 'digamma'
 
 includeBuild('submodules/Epsilon')
-includeBuild('submodules/Solaris')
+include(':Solaris')
+project(':Solaris').projectDir = file("submodules/Solaris")
