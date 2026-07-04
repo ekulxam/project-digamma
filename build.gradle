@@ -30,11 +30,6 @@ dependencies {
 	implementation include("gdn.hypercube:epsilon:1.0-SNAPSHOT")
 	implementation include("gdn.hypercube:solaris:1.0.0")
 
-	implementation 'net.bytebuddy:byte-buddy:1.14.10'
-	implementation "de.florianreuth:asmfabricloader:2.2.0"
-	implementation 'net.bytebuddy:byte-buddy-agent:1.14.10'
-	implementation include('io.github.classgraph:classgraph:4.8.177')
-
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 	modImplementation include("org.ladysnake.cardinal-components-api:cardinal-components-base:8.0.0")
@@ -99,6 +94,7 @@ jar {
 tasks.register('ccscript', Exec) {
 	group = 'build'
 
+	dependsOn gradle.includedBuild('Epsilon').task(':compileJava')
 	commandLine 'java', '-jar', "submodules/Epsilon/build/libs/epsilon-1.0-SNAPSHOT.jar", '--output', 'src/main/resources/data/digamma/ccscript.bin'
 }
 
