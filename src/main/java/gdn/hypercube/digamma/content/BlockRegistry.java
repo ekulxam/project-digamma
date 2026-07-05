@@ -1,29 +1,22 @@
 package gdn.hypercube.digamma.content;
 
 import gdn.hypercube.digamma.content.block.TypedBlock;
-import gdn.hypercube.solaris.generator.content.ReflectiveRegistry;
-import gdn.hypercube.solaris.generator.content.RegistryInitializer;
+import gdn.hypercube.solaris.generator.content.DualRegistry;
 import gdn.hypercube.solaris.util.Priority;
 import gdn.hypercube.solaris.util.UsedImplicitly;
-import java.util.function.Supplier;
-import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static gdn.hypercube.digamma.content.block.TypedBlock.Type;
 
 @Priority(5) // for after item init
 @UsedImplicitly
-@SuppressWarnings("UnusedReturnValue") // stfu
-public class BlockRegistry extends ReflectiveRegistry<Block> {
+public class BlockRegistry extends DualRegistry<Block, Item> {
 
     private Block typed(String prefix, String name, Type type) {
         return this.create(prefix + name, () -> new TypedBlock(prefix, name, type));
@@ -41,15 +34,13 @@ public class BlockRegistry extends ReflectiveRegistry<Block> {
         return typed("tile/", name, type);
     }
 
+    @SuppressWarnings("CodeBlock2Expr")
     protected BlockRegistry() {
-        super("digamma");
-    }
-
-    @Override
-    public Block create(String name, Supplier<Block> input) {
-        Block block = input.get();
-        RegistryInitializer.get(Item.class).create(name, () -> new BlockItem(block, new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of("digamma", name)))));
-        return super.create(name, () -> block);
+        super("digamma", (name, block) -> {
+            return new BlockItem(block, new Item.Settings().registryKey(
+                RegistryKey.of(RegistryKeys.ITEM, Identifier.of("digamma", name))
+            ));
+        });
     }
 
     { // TODO: We should really have some kind of system to make this better. For now though, this "works".
