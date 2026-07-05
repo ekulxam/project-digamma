@@ -1,6 +1,7 @@
 package gdn.hypercube.digamma.content;
 
 import gdn.hypercube.digamma.content.item.DatapadItem;
+import gdn.hypercube.digamma.content.item.GenericItem;
 import gdn.hypercube.solaris.generator.content.ReflectiveRegistry;
 import gdn.hypercube.solaris.generator.content.RegistryInitializer;
 import gdn.hypercube.solaris.util.UsedImplicitly;
@@ -15,6 +16,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 @UsedImplicitly
 public class ItemRegistry extends ReflectiveRegistry<Item> {
     public final Item DATAPAD = this.create("datapad", DatapadItem::new);
+    public final Item SHARPENING_KIT = this.create("upgrade/sharpening_kit", () -> new GenericItem("upgrade/sharpening_kit"));
 
     protected ItemRegistry() {
         super("digamma");

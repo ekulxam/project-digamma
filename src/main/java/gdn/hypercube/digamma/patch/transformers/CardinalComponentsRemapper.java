@@ -1,6 +1,6 @@
 package gdn.hypercube.digamma.patch.transformers;
 
-import gdn.hypercube.solaris.core.SolarisTransformer;
+import gdn.hypercube.solaris.api.SolarisTransformer;
 import gdn.hypercube.solaris.util.UsedImplicitly;
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.Type;
