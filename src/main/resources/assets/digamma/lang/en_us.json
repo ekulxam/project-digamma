@@ -56,5 +56,43 @@
   "itemGroup.digamma.blocks": "Digamma Project (Blocks)",
   "itemGroup.digamma.blocks/dungeon": "Digamma Project (Dungeon Blocks)",
 
+  "item.digamma.coin.copper": "Shilling",
+  "item.digamma.coin.silver": "Florin",
+  "item.digamma.coin.gold": "Soverign",
+  "item.digamma.coin.platinum": "Marque",
+
+  "item.digamma.upgrade.armour_spikes": "Armour Spikes",
+  "item.digamma.upgrade.counterweight": "Counterweight",
+  "item.digamma.upgrade.diving_kit": "Diving Kit",
+  "item.digamma.upgrade.elastic_layering": "Elastic Layering",
+  "item.digamma.upgrade.elastic_soles": "Elastic Soles",
+  "item.digamma.upgrade.firedamp": "Firedamp",
+  "item.digamma.upgrade.laminated_padding": "Laminated Padding",
+  "item.digamma.upgrade.quilted_cover": "Quilted Cover",
+  "item.digamma.upgrade.reinforced_limbs": "Reinforced Limbs",
+  "item.digamma.upgrade.reinforcement": "Reinforcement",
+  "item.digamma.upgrade.scuba_tank": "Scuba Tank",
+  "item.digamma.upgrade.sharpening_kit": "Sharpening Kit",
+
+  "block.digamma.artifice.frame_basic": "Basic Frame",
+  "block.digamma.artifice.frame_reinforced": "Reinforced Frame",
+  "block.digamma.artifice.frame_industrial": "Industrial Frame",
+  "block.digamma.artifice.frame_advanced": "Advanced Frame",
+
+  "block.digamma.artifice.glass_basic": "Basic Glass Wall",
+  "block.digamma.artifice.glass_reinforced": "Reinforced Glass Wall",
+  "block.digamma.artifice.glass_industrial": "Industrial Glass Wall",
+  "block.digamma.artifice.glass_advanced": "Advanced Glass Wall",
+
+  "block.digamma.artifice.scaffold_basic": "Basic Scaffolding",
+  "block.digamma.artifice.scaffold_reinforced": "Reinforced Scaffolding",
+  "block.digamma.artifice.scaffold_industrial": "Industrial Scaffolding",
+  "block.digamma.artifice.scaffold_advanced": "Advanced Scaffolding",
+
+  "block.digamma.artifice.wall_basic": "Basic Blast Wall",
+  "block.digamma.artifice.wall_reinforced": "Reinforced Blast Wall",
+  "block.digamma.artifice.wall_industrial": "Industrial Blast Wall",
+  "block.digamma.artifice.wall_advanced": "Advanced Blast Wall",
+
   "block.digamma.dungeon": "Dungeon Block: %s"
 }

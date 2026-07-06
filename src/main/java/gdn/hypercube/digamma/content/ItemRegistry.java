@@ -25,7 +25,7 @@ public class ItemRegistry extends ReflectiveRegistry<Item> {
     public final Item DATAPAD = this.create("datapad", DatapadItem::new);
 
     {
-        for (String coin : new String[]{"copper", "gold", "silver", "platinum"}) {
+        for (String coin : new String[]{"copper", "silver", "gold", "platinum"}) {
             this.create("coin/" + coin, () -> new GenericItem(
                 "coin/" + coin,
                 new ChainedList<Text>()
@@ -72,6 +72,8 @@ public class ItemRegistry extends ReflectiveRegistry<Item> {
         collect(blocks, this.contents, TooltippedBlockItem.class, BlockItem.class);
         collect(dungeons, this.contents, DungeonBlockItem.class);
         items.iconSupplier = DATAPAD::getDefaultStack;
+        blocks.iconSupplier = () -> this.contents.get("artifice/wall_advanced").getDefaultStack();
+        dungeons.iconSupplier = () -> this.contents.get("dungeon/abductor").getDefaultStack();
     }
 
     @SafeVarargs @SuppressWarnings("deprecation")

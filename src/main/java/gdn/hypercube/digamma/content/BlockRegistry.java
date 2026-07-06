@@ -54,7 +54,7 @@ public class BlockRegistry extends DualRegistry<Block, Item> {
 
     {
         for (int i = 0; i <= 3; i++) {
-            for (int j = 4; j <= 7; j++) {
+            for (int j = 0; j <= 3; j++) {
                 String type = switch(i) {
                     case 0 -> "frame";
                     case 1 -> "glass";
@@ -64,10 +64,10 @@ public class BlockRegistry extends DualRegistry<Block, Item> {
                 };
 
                 String kind = switch (j) {
-                    case 4 -> "basic";
-                    case 5 -> "reinforced";
-                    case 6 -> "industrial";
-                    case 7 -> "advanced";
+                    case 0 -> "basic";
+                    case 1 -> "reinforced";
+                    case 2 -> "industrial";
+                    case 3 -> "advanced";
                     default -> throw new IllegalStateException("Unexpected value: " + j);
                 };
 
