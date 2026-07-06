@@ -68,18 +68,18 @@ public class ItemRegistry extends ReflectiveRegistry<Item> {
         ItemGroup items = groups.get("items");
         ItemGroup blocks = groups.get("blocks");
         ItemGroup dungeons = groups.get("blocks/dungeon");
-        collect(items, this.contents, DatapadItem.class, GenericItem.class);
-        collect(blocks, this.contents, TooltippedBlockItem.class, BlockItem.class);
-        collect(dungeons, this.contents, DungeonBlockItem.class);
+        collect(items, DatapadItem.class, GenericItem.class);
+        collect(blocks, TooltippedBlockItem.class, BlockItem.class);
+        collect(dungeons, DungeonBlockItem.class);
         items.iconSupplier = DATAPAD::getDefaultStack;
         blocks.iconSupplier = () -> this.contents.get("artifice/wall_advanced").getDefaultStack();
         dungeons.iconSupplier = () -> this.contents.get("dungeon/abductor").getDefaultStack();
     }
 
     @SafeVarargs @SuppressWarnings("deprecation")
-    public static void collect(ItemGroup target, Map<String, ? extends Item> contents, Class<? extends Item>... valid) {
+    public final void collect(ItemGroup target, Class<? extends Item>... valid) {
         target.entryCollector = (_, entries) -> {
-            contents.forEach((_, item) -> {
+            this.contents.forEach((_, item) -> {
                 for (Class<? extends Item> clazz : valid) {
                     if (item.getClass().isAssignableFrom(clazz)) {
                         ItemStack stack;

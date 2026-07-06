@@ -1,6 +1,6 @@
 package gdn.hypercube.digamma.delta.core;
 
-import gdn.hypercube.digamma.delta.command.DeltaProtocolCommands;
+import gdn.hypercube.digamma.delta.command.MiscCommands;
 import gdn.hypercube.digamma.delta.input.DeltaProtocolInputConsumer;
 import gdn.hypercube.digamma.delta.util.DeltaProtocolDrawInfo;
 import gdn.hypercube.digamma.delta.util.DeltaProtocolPortrait;
@@ -20,7 +20,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.hud.VanillaHudElements;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.window.Window;
 import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.LogManager;
@@ -44,7 +43,7 @@ public class DeltaProtocolBootSequence implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        new DeltaProtocolCommands();
+        new MiscCommands();
         ENGINE.speed = EpsilonEngine.Speed.FAST / 4;
         VARIABLES.add(() -> CLIENT.player.getStringifiedName());
 
