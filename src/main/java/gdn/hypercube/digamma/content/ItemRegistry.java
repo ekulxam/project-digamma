@@ -17,30 +17,42 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import org.apache.commons.lang3.text.WordUtils;
 
 @UsedImplicitly
-@SuppressWarnings("CodeBlock2Expr")
+@SuppressWarnings({"CodeBlock2Expr", "deprecation"})
 public class ItemRegistry extends ReflectiveRegistry<Item> {
     public final Item DATAPAD = this.create("datapad", DatapadItem::new);
 
     {
-        for (String item : new String[]{
+        for (String coin : new String[]{"copper", "gold", "silver", "platinum"}) {
+            this.create("coin/" + coin, () -> new GenericItem(
+                "coin/" + coin,
+                new ChainedList<Text>()
+                .add(Text.translatable("tooltip.artifice.coin", WordUtils.capitalize(coin)).formatted(Formatting.GRAY))
+                .add(
+                    Text.translatable("tooltip.artifice.coin." + coin + ".flavour")
+                    .formatted(Formatting.DARK_GRAY)
+                    .formatted(Formatting.ITALIC)
+                ).arrayify())
+            );
+        }
+
+        for (String upgrade : new String[]{
             "armour_spikes", "counterweight", "diving_kit",
             "elastic_layering", "elastic_soles", "firedamp",
             "laminated_padding", "plaited_string", "quilted_cover",
             "reinforced_limbs", "reinforcement", "scuba_tank",
             "sharpening_kit"
         }) {
-            this.create("upgrade/" + item, () -> new GenericItem(
-                "upgrade/" + item,
+            this.create("upgrade/" + upgrade, () -> new GenericItem(
+                "upgrade/" + upgrade,
                 new ChainedList<Text>()
-                    .add(
-                        Text.translatable("tooltip.artifice.upgrade." + item + ".flavour")
-                        .formatted(Formatting.DARK_GRAY)
-                        .formatted(Formatting.ITALIC)
-                    )
-                    .arrayify()
-                )
+                .add(
+                    Text.translatable("tooltip.artifice.upgrade." + upgrade + ".flavour")
+                    .formatted(Formatting.DARK_GRAY)
+                    .formatted(Formatting.ITALIC)
+                ).arrayify())
             );
         }
     }

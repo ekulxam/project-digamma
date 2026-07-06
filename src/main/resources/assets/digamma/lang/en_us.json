@@ -32,6 +32,12 @@
   "tooltip.artifice.scaffold.advanced": "Rugged scaffold",
   "tooltip.artifice.scaffold.advanced.flavour": "Precisely machined",
 
+  "tooltip.artifice.coin": "%s Coin",
+  "tooltip.artifice.coin.copper.flavour": "Dependable",
+  "tooltip.artifice.coin.silver.flavour": "Has a mirrored finish",
+  "tooltip.artifice.coin.gold.flavour": "Coin of the realm",
+  "tooltip.artifice.coin.platinum.flavour": "A dollar saved...",
+
   "tooltip.artifice.upgrade.sharpening_kit.flavour": "A simple kit to sharpen blades",
   "tooltip.artifice.upgrade.reinforcement.flavour": "The perfect materials to reinforce weak points",
   "tooltip.artifice.upgrade.reinforced_limbs.flavour": "Allows for a stronger pull",
