@@ -3,4 +3,5 @@ drawoff     [00 02] ; Disable the above
 varfill     [00 03 short byte]
 setflag     [00 04 short byte]
 chkflag     [00 05 addr $byte $byte] ; type abuse
-image       [00 06 byte] ; Display a portrait
+image       [00 06 short] ; Display a portrait
+playsfx     [00 07 short]
