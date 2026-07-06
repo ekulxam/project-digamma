@@ -1,4 +1,4 @@
-package gdn.hypercube.digamma.content.block;
+package gdn.hypercube.digamma.content;
 
 import gdn.hypercube.digamma.content.recipe.UpgradingRecipe;
 import gdn.hypercube.solaris.generator.content.ReflectiveRegistry;
