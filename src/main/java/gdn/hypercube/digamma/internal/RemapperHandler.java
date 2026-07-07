@@ -1,4 +1,4 @@
-package gdn.hypercube.digamma.util;
+package gdn.hypercube.digamma.internal;
 
 import net.fabricmc.loader.api.FabricLoader;
 import org.objectweb.asm.Type;

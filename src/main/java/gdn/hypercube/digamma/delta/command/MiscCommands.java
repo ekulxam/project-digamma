@@ -7,6 +7,7 @@ import gdn.hypercube.digamma.delta.util.DeltaProtocolSound;
 import gdn.hypercube.epsilon.core.util.Argument;
 import gdn.hypercube.epsilon.core.util.EngineCommand;
 
+@SuppressWarnings("unused")
 public class MiscCommands {
     EngineCommand VarFill = new EngineCommand(EngineCommand.Type.PLAFORM_SPECIFIC, 0x03, (engine, argv) -> {
         int index = (int) argv[0].value;
@@ -19,6 +20,7 @@ public class MiscCommands {
 
     EngineCommand PlaySound = new EngineCommand(EngineCommand.Type.PLAFORM_SPECIFIC, 0x07, (_, argv) -> {
         DeltaProtocolSound sound = DeltaProtocolSound.values()[(int) argv[0].value];
+        System.out.println("Playing sound " + sound.get());
         DeltaProtocolAudioEngine.drive(new DeltaProtocolAudioEngine.SoundInstance(sound.get()));
     }, new Argument(Argument.Type.SHORT));
 }

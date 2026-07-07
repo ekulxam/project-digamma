@@ -12,6 +12,7 @@ public class DeltaProtocolAudioEngine {
     private static final Random RNG = new LocalRandom(System.currentTimeMillis());
 
     public static void drive(SoundInstance instance) { // TODO: do more
+        System.out.println("Playing sound " + instance.toString());
         MinecraftClient.getInstance().getSoundManager().play(instance);
     }
 

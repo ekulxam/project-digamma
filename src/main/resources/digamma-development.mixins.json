@@ -1,9 +1,11 @@
-{	"required": true,
-	"package": "gdn.hypercube.digamma.injection",
+{	"required": false,
+	"package": "gdn.hypercube.digamma.internal.injection",
 	"plugin": "gdn.hypercube.solaris.core.SolarisTransformerLoader",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"WindowRecentererMixin"
+		"CardinalComponentsRemapperMixin",
+		"CardinalComponentsRemapperMixin$ASMHelper",
+		"CardinalComponentsRemapperMixin$Bootstrap"
 	],
 	"injectors": {
 		"defaultRequire": 1

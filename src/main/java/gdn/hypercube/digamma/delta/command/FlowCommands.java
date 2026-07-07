@@ -7,9 +7,9 @@ import gdn.hypercube.epsilon.core.util.Argument;
 import gdn.hypercube.epsilon.core.util.EngineCommand;
 import gdn.hypercube.epsilon.core.util.MemoryHelper;
 
+@SuppressWarnings({"unused", "DataFlowIssue"})
 public class FlowCommands {
     // Mom, can we have Store8? No, we have Store8 at home. Store8 at home:
-    @SuppressWarnings("DataFlowIssue")
     EngineCommand GetFlag = new EngineCommand(EngineCommand.Type.PLAFORM_SPECIFIC, 0x04, (engine, argv) -> {
         int base = MemoryHelper.registerBase((int) argv[1].value);
         int offset = (int) argv[2].value;
