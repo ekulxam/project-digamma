@@ -4,17 +4,17 @@ import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 
 public enum DeltaProtocolSound {
-    SPARKLE("")
+    DING(Identifier.of("minecraft", "entity.player.levelup"))
     ;
 
-    final String name;
+    final Identifier ident;
 
-    DeltaProtocolSound(String name) {
-        this.name = name;
+    DeltaProtocolSound(Identifier ident) {
+        this.ident = ident;
     }
 
     @Nullable
     public Identifier get() {
-        return this.name.isEmpty() ? null : Identifier.of("digamma", this.name);
+        return this.ident;
     }
 }
